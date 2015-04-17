@@ -8,7 +8,7 @@ module Web::Views::Home
       Web::Presenters::JSONPresenter.new(
         Workflow.new(
           strategy: Strategies::LeanKit,
-          files: Dir["#{Web::Application.configuration.root}/../../db/cards/*.txt"]
+          source:   Dir["#{Web::Application.configuration.root}/../../db/cards/*.txt"]
         )
       ).metrics(
         measure_every: WEEK_FREQUENCY.weeks

@@ -35,7 +35,7 @@ RSpec.describe Producers::CardProducer do
     before do
       Workflow.new(
         strategy: Strategies::LeanKit,
-        files:    Dir["#{__dir__}/../../fixtures/lean_kit/*.txt"]
+        source:   Dir["#{__dir__}/../../fixtures/lean_kit/*.txt"]
       ).metrics(
         measure_every: measure_every,
         start_date:    start_date
